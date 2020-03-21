@@ -1,3 +1,12 @@
+/*
+    Description: return prime vector which contains all the primes up to limit n.
+                 is_prime[i] is true if i is a prime.
+    Test: https://www.spoj.com/problems/TDPRIMES/
+    Complexity: O(n log log n)
+    Time taken for 100'000'000 is approx 0.8 s. Runs 30% faster if only odd indices are stored.
+        
+*/
+
 const int limit=1e8;
 bitset<limit>is_prime;
 vector<int> sieve()
