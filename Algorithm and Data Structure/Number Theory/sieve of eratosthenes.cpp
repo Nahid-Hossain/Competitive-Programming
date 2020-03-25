@@ -23,5 +23,4 @@ void sieve()
     for(int i=2;i<limit;i++)
         if(is_prime[i])
             prime.push_back(i);
-    return prime;
 }
