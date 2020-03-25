@@ -7,7 +7,7 @@
         
 */
 
-const int limit=1e8;
+const int limit=1e8+10;
 bitset<limit>is_prime;
 vector<int>prime;
 void sieve()
