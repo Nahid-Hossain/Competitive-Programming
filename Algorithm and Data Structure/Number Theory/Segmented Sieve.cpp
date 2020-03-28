@@ -1,4 +1,12 @@
-
+/*
+    Algorithm: First Sieve till root  √(n). For limit 1e9, sieve till 32000. If a number is not a prime, then atleast one of the prime
+    	       will divide it. Mark all the numbers that are divisible by prime in the range from l to r.If none of the prime divide 
+	       the number then this must be a prime. So store it in _prime vector.
+    Test:  https://www.spoj.com/problems/PRIME1/fbclid=IwAR36GQAuzcKveYQBj3Pum0ddxET-HlkQKBPuzdfYiDGtjm2qJzhHJlC40yM
+    Time complexity:O(nloglongn)
+    Space complexity: O(√n).
+        
+*/
 const int limit=32000;
 bitset<limit>is_prime;
 vector<int>prime;
