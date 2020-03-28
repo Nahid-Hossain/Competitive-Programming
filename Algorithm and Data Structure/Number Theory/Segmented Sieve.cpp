@@ -3,7 +3,7 @@
     	       will divide it. Mark all the numbers that are divisible by prime in the range from l to r.If none of the prime divide 
 	       the number then this must be a prime. So store it in _prime vector.
 	       
-    Test:  https://www.spoj.com/problems/PRIME1/fbclid=IwAR36GQAuzcKveYQBj3Pum0ddxET-HlkQKBPuzdfYiDGtjm2qJzhHJlC40yM
+    Test:  https://www.spoj.com/problems/PRIME1/
     Time complexity:O(n log log n)
     Space complexity: O(√n).
         
