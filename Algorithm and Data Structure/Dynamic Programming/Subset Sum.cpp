@@ -21,7 +21,6 @@ bool subset_sum(vector<int>&v,int n,int sum) {
                     dp[i][j]=false;
                 }
             }
-        
         }
     }
     return dp[n][sum];
