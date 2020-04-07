@@ -18,7 +18,8 @@ bool is_bipartite(int u,int c) {
     for(int v:adj[u]) {
         if(color[v]==-1) {
             if(!is_bipartite(v,c^1)) {
-                return false;  
+                return false;
+                exit(0);
             }
         }
         else if(color[u]==color[v])
