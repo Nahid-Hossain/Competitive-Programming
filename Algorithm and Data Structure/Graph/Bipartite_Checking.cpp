@@ -19,7 +19,6 @@ bool is_bipartite(int u,int c) {
         if(color[v]==-1) {
             if(!is_bipartite(v,c^1)) {
                 return false;
-                exit(0);
             }
         }
         else if(color[u]==color[v])
