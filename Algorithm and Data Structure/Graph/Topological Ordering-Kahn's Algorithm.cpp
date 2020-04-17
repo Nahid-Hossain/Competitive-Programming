@@ -9,8 +9,10 @@ bool topsort(int n) {
             q.push(i);
         }
     }
+    int count_node=0;
     while(!q.empty()) {
         int cur_node=q.front();
+        count_node++;
         top_order.push_back(cur_node);
         q.pop();
         for(int u:adj[cur_node]) {
@@ -20,10 +22,5 @@ bool topsort(int n) {
             }
         }
     }
-    for(int i=0;i<n;i++) {
-        if(indegree[i]!=0) {
-            return false;
-        }
-    }
-    return true;
+    return count_node==n;
 }
