@@ -1,9 +1,9 @@
 const int mxN=2e5+10;
 vector<int>adj[mxN];
 vector<int>indegree(mxN,0);
-int n;//number of nodes
-void topsort() {
-    queue<int>q;
+vector<int>top_order;
+bool topsort(int n) {
+    queue<int>q;//use priority queue for lexiographically smallest order
     for(int i=0;i<n;i++) {
         if(!indegree[i]) {
             q.push(i);
@@ -11,7 +11,7 @@ void topsort() {
     }
     while(!q.empty()) {
         int cur_node=q.front();
-        //print here
+        top_order.push_back(cur_node);
         q.pop();
         for(int u:adj[cur_node]) {
             indegree[u]--;
@@ -20,4 +20,10 @@ void topsort() {
             }
         }
     }
+    for(int i=0;i<n;i++) {
+        if(indegree[i]!=0) {
+            return false;
+        }
+    }
+    return true;
 }
