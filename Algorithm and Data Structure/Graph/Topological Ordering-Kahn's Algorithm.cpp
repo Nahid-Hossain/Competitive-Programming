@@ -5,7 +5,7 @@
     that has 0 indegree. Why so? Well, if a vertex has zero indegree, then this vertex is not dependant on other vertex. We will remove
     the vertex and we will decrease the indegree of it's adjacent by 1. We will continue this process. After finishing, if the count_node
     is less than the total node, then there must have a cycle in that graph. So we will return false  otherwise, we will return 
-    true. For lexiographical smallest topological sort, we will use priority_queue instead of queue.
+    true. For lexiographical smallest topological sort, we will use priority_queue instead of queue and top() instead of front().
                   
     Test:http://www.lightoj.com/volume_showproblem.php?problem=1003
     Complexity: O(v+e). for lexiographical smallest order (vlogn+e)
