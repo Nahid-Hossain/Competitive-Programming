@@ -1,0 +1,16 @@
+{
+   "swallow_startup_errors": true,
+    "auto_formatting": true,
+    "autoformat_ignore":
+    [
+    ],
+    "pep8_ignore":
+    [
+        "E501"
+    ],
+    "anaconda_linter_underlines": false,
+    "anaconda_linter_mark_style": "none",
+    "disable_anaconda_completion": true,
+    "python_interpreter": "C:\\Users\\nahid\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
+   
+}
