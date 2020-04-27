@@ -25,7 +25,9 @@ void dijkstra(int src) {
 }
 
 //For Printing path we have to know the parent of each node. So we have to maintain another array for keep the parent of each node.
-If the distance of destination is infinity, then there is no path between src to destination.
+//If the distance of destination is infinity, then there is no path between source to destination.
+
+//don't forget to maintain a parent array for printing the path
 
 void print_path(int destination) {
     stack<int>path;
