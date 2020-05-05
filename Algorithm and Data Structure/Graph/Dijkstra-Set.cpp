@@ -2,7 +2,6 @@ const int inf=1e9+7;
 const int mxN=1e5+6;
 vector<pair<int,int>>adj[mxN];
 vector<int>dist(mxN,inf);
-int n,m;
 void dijkstra(int src) {
     set<pair<int,int>>s;
     s.insert({0,src});
