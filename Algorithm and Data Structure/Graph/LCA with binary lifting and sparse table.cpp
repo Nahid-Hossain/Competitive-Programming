@@ -3,9 +3,6 @@ const int L=18;
 vector<int>adj[mxN];
 vector<vector<int>>ancestor(mxN,vector<int>(L));
 vector<int>level(mxN);
-bool cmp(int u,int v) {
-    return level[u]>level[v];
-}
 void dfs(int u,int par) {
     ancestor[u][0]=par;
     for(int i=1;i<L;i++) {
