@@ -1,0 +1,62 @@
+{
+	"theme": "cobalt2",
+    // the default config, either a single config name or a platform
+    // specific dict
+    "default_config": {
+        "linux": null,    // login shell
+        "osx": null,      // login shell
+        "windows": "Command Prompt"
+    },
+    // a list of available shells to execute
+    "shell_configs": [
+        {
+            "name": "Bash",
+            "cmd": ["bash", "-i", "-l"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux", "osx"]
+        },
+        {
+            "name": "Zsh",
+            "cmd": ["zsh", "-i", "-l"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux", "osx"]
+        },
+        {
+            "name": "Command Prompt",
+            "cmd": "cmd.exe",
+            "env": {},
+            "enable": true,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "PowerShell Core",
+            "cmd": "pwsh.exe",
+            "env": {},
+            "enable": true,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "PowerShell",
+            "cmd": "powershell.exe",
+            "env": {},
+            "enable": true,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "Cmder",
+            "cmd": ["cmd.exe", "/k", "%CMDER_ROOT%\\vendor\\init.bat"],
+            "env": {},
+            "enable": false,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "WSL Login Shell",
+            "cmd": "wsl.exe",
+            "env": {},
+            "enable": true,
+            "platforms": ["windows"]
+        }
+    ],
+}
