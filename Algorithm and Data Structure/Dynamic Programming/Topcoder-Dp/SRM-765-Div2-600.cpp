@@ -19,8 +19,8 @@ class Tunnel {
     	for(int j=0;j<m;j++) {
     		if(grid[i][j]=='v') {
     			if(grid[i+1][j]=='.') {
-					dp[i+1][j]=min(dp[i+1][j],dp[i][j]);
-					grid[i+1][j]='v';
+				dp[i+1][j]=min(dp[i+1][j],dp[i][j]);
+				grid[i+1][j]='v';
 				}
     			for(int k=j+1;k<=min(j+r,m-1);k++) {
     				if(grid[i][k]=='.') {
@@ -35,8 +35,8 @@ class Tunnel {
     				if(grid[i][k]=='.') {
     					dp[i][k]=min(dp[i][k],dp[i][k+1]+1);
     					if(grid[i+1][k]=='.') {
-    						dp[i+1][k]=min(dp[i+1][k],dp[i][k]);
-    						grid[i+1][k]='v';
+						dp[i+1][k]=min(dp[i+1][k],dp[i][k]);
+						grid[i+1][k]='v';
     					}
     				}
     			}
