@@ -15,11 +15,10 @@
         
 */
 
-const int limit=1e7+10;
+const int limit=1e7+10; //keep an eye on the limit
 bitset<limit>is_prime;
 vector<int>prime;
 void sieve() {
-    //keep an eye on the limit
     is_prime.set();
     is_prime[0]=is_prime[1]=0;
     for(int i=4;i<limit;i+=2)
