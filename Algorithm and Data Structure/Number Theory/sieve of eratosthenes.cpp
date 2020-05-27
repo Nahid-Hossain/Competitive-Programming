@@ -23,9 +23,12 @@ void sieve() {
     is_prime[0]=is_prime[1]=0;
     for(int i=4;i<limit;i+=2)
         is_prime[i]=0;
-    for(int i=3;i*i<limit;i+=2)
-        for(int j=i*i;j<limit;j+=i*2)
+    for(int i=3;i*i<limit;i+=2) {
+        if(is_prime[i]) {
+            for(int j=i*i;j<limit;j+=i*2)
             is_prime[j]=0;
+        }
+    }   
     for(int i=2;i<limit;i++)
         if(is_prime[i])
             prime.push_back(i);
