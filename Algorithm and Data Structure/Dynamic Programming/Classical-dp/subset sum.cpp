@@ -18,24 +18,13 @@
 
 bool subset_sum(vector<int>&v,int n,int sum) {
     vector<vector<bool>>dp(n+1,vector<bool>(sum+1));
-    for(int i=0;i<=n;i++) {
+    dp[0][0]=true;
+    for(int i=1;i<=n;i++) {
+        int val=v[i-1];
         for(int j=0;j<=sum;j++) {
-            if(j==0) {
-                dp[i][j]=true;
-            }
-            else if(i==0) {
-                dp[i][j]=false;
-            }
-            else if(j<v[i-1]) {
-                dp[i][j]=dp[i-1][j];
-            }
-            else {
-                if(dp[i-1][j] or dp[i-1][j-v[i-1]]) {
-                    dp[i][j]=true;
-                }
-                else {
-                    dp[i][j]=false;
-                }
+            dp[i][j]=dp[i-1][j];
+            if(j>=val) {
+                dp[i][j]=dp[i][j]|dp[i-1][j-val];
             }
         }
     }
