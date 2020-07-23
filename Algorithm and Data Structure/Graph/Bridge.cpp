@@ -1,74 +1,39 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define endl '\n'
-const int mxN=10005;
-vector<int>adj[mxN];
-vector<int>visited(mxN),start(mxN),low(mxN);
-vector<pair<int,int>>bridge;
-int dfs_timer=0;
-void dfs(int u,int par=-1) {
-    visited[u]=true;
-    start[u]=low[u]=++dfs_timer;
-    for(int v:adj[u]) {
-        if(v==par) continue;
-        if(!visited[v]) {
-            dfs(v,u);
-            low[u]=min(low[u],low[v]);
-            if(low[v]>start[u]) {
-                int tu=u,tv=v;
-                if(tu>tv) swap(tu,tv);
-                bridge.push_back({tu,tv});
+/*
+    1. return the vector of indices of edges which are bridges.
+    2. handle parallel edges
+*/
+
+struct Bridge {
+    vector<vector<pair<int,int>>>adj;
+    vector<int>start,low;
+    vector<int>bridges;
+    int n,dfs_timer;
+    Bridge(int _n):n(_n),adj(_n),start(_n),low(_n) {}
+    void add_edge(int u,int v,int id) {
+        adj[u].push_back({v,id});
+        adj[v].push_back({u,id});
+    }
+    vector<int>find_bridges() {
+        for(int i=0;i<n;i++) {
+            dfs_timer=0;
+            if(!start[i]) dfs(i);
+        }
+        return bridges;
+    }
+    void dfs(int u,int par=-1) {
+        start[u]=low[u]= ++dfs_timer;
+        for(auto v:adj[u]) {
+            if(v.second==par) continue;
+            if(start[v.first]) {
+                low[u]=min(low[u],start[v.first]);
+            }
+            else {
+                dfs(v.first,v.second);
+                low[u]=min(low[u],low[v.first]);
+                if (low[v.first]>start[u]) {
+                    bridges.push_back(v.second);
+                }
             }
         }
-        else {
-            low[u]=min(low[u],start[v]);
-        }
     }
-}
-void solve() {
-    int n;
-    scanf("%d",&n);
-    if(n==0) {
-        printf("0 critical links\n");
-        return;
-    }
-    bridge.clear();
-    for(int i=0;i<=n;i++) {
-        adj[i].clear();
-        start[i]=0;
-        low[i]=0;
-        visited[i]=false;
-    }
-    for(int i=0;i<n;i++) {
-        int u; char s[20];
-        // scanf("%d%s",&u,&s);
-        scanf("%d",&u);
-        scanf("%s",&s);
-        int m=atoi(&s[1]);
-        for(int j=0;j<m;j++) {
-            int v;
-            scanf("%d",&v);
-            adj[u].emplace_back(v);
-            adj[v].emplace_back(u);
-        }
-    }
-    dfs_timer=0;
-    for(int i=0;i<n;i++) {
-        if(!visited[i]) {
-            dfs(i);
-        }
-    }
-    sort(bridge.begin(),bridge.end());
-    printf("%d critical links\n",bridge.size());
-    for(auto x:bridge) {
-        printf("%d - %d\n",x.first,x.second);
-    }
-}
-int main(int argc, char const *argv[]) {
-    int test_case;
-    scanf("%d",&test_case);
-    for(int tc=1;tc<=test_case;tc++) {
-        printf("Case %d:\n",tc);
-        solve();
-    }
-}
+};
