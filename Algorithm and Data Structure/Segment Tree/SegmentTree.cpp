@@ -44,7 +44,6 @@ struct SegmentTree {
         if(b>r or e<l) return 0; //return inf for minimum 
         if(b<=l and e>=r) return tree[cur_node].value; //return in range value
         int mid=l+(r-l)/2;
-
         auto left_val= query(cur_node*2+1,l,mid,b,e);
         auto right_val=query(cur_node*2+2,mid+1,r,b,e);
         return(process_query(left_val,right_val));
