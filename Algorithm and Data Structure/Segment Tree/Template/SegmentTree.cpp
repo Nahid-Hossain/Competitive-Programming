@@ -7,7 +7,7 @@ struct SegmentTree {
     SegmentTree(int _n):n(_n) {
         tree.resize(4*n);
     }
-    void add_on_leave(int cur_node,int val) {
+    void add_on_leaf(int cur_node,int val) {
 
     }
     node merge(node left,node right) { //merge left and right child
@@ -15,11 +15,11 @@ struct SegmentTree {
 
     }
     void propagate(int cur_node,int l,int r) {
-    
+        //don't forget to update propagate value for child
     }
     void build(int cur_node,int l,int r) {
         if(l==r) {
-            //add_on_leave(cur_node,v[l]);
+            //add_on_leaf(cur_node,v[l]);
 
             return;
         }
@@ -47,7 +47,7 @@ struct SegmentTree {
     }
     node query(int cur_node,int l,int r,int b,int e) {
         if(b>r or e<l) { //return out range value
-
+            node temp; return temp;
         }
         if(b<=l and e>=r) return tree[cur_node]; //return in range value
         // if(tree[cur_node].propagate_val>0) { //condition for propagate:
