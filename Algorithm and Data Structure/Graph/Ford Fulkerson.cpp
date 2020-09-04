@@ -17,12 +17,8 @@ int n,m,s,t;
 void add_edge(int u,int v,int c) {
     edge.push_back({u,v,c});
     adj[u].push_back(edge.size()-1);
-    edge.push_back({v,u,0});
-    adj[v].push_back(edge.size()-1);
     edge.push_back({v,u,c});
     adj[v].push_back(edge.size()-1);
-    edge.push_back({u,v,0});
-    adj[u].push_back(edge.size()-1);
 }
 int dfs(int u,int flow=inf) {
     visited[u]=true;
