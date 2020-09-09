@@ -26,7 +26,7 @@ void sieve() {
     for(int i=3;i*i<limit;i+=2) {
         if(is_prime[i]) {
             for(int j=i*i;j<limit;j+=i*2)
-            is_prime[j]=0;
+                is_prime[j]=0;
         }
     }   
     for(int i=2;i<limit;i++)
