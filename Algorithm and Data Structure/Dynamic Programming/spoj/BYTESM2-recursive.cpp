@@ -1,3 +1,6 @@
+/* 
+    problem link: https://www.spoj.com/problems/BYTESM2/
+*/
 #include<bits/stdc++.h>
 using namespace std;
 #define endl '\n'
