@@ -23,7 +23,7 @@ int recur(int x,int y,int z) {
 class MutaliskEasy {
   public:
   int minimalAttacks(vector <int> x) {
-  	  int a=0,b=0,c=0;
+  	 int a=0,b=0,c=0;
       if(x.size()==1) a=x[0];
       if(x.size()==2) a=x[0],b=x[1];
       if(x.size()==3) a=x[0],b=x[1],c=x[2];
