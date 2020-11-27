@@ -16,7 +16,7 @@
 
 The three power puff girls move simultaneously from their initial position. And in each minute, from their current cells, they can move to any four adjacent cells (North, East, West, South) if the destination cell is neither a wall nor the cell contains a monster. <br>
 
-Now, we have to find the **maximum** of the shortest distances from the initial position of each power puff girl to home. In other words, if the shortest distance from initial postiion of each power puff girl to home is
+Now, we have to find the **maximum** of the shortest distances from the initial position of each power puff girl to home. In other words, if the shortest distance from the initial postiion of each power puff girl to home is
 da, db and dc respectively, then, we have to find the max(da, db, dc). <hr /> 
 ### Solution Idea 1:
 
@@ -94,7 +94,7 @@ int main(int argc, char const *argv[]) {
 
 ***
 ### Solution Idea 2:
-Do we really need to run bfs three times? Actually, we can solve this problem using single bfs. Instead of finding the shortest distance from each power puff girl to home, we can find the shortest distance from **home** to each power puff girl using single bfs.
+Do we really need to run bfs three times? Actually, we can solve this problem using single bfs. Instead of finding the shortest distance from different each power puff girl to home, we can find the shortest distance from **home** to each power puff girl using single bfs.
 ``` c++
 #include<bits/stdc++.h>
 using namespace std;
