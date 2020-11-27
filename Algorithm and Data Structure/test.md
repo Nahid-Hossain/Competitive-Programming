@@ -17,7 +17,5 @@
 The three power puff girls move simultaneously from their initial position. And in each minute, from their current cells, they can move to any four adjacent cells (North, East, West, South) if the destination cell is neither a wall nor the cell contains a monster. <br>
 
 Now, we have to find the **maximum** shortest distance from the initial position of any power puff girl to home. In other words, if the shortest distance from the initial postiion of each power puff girl to home is
-da, db and dc respectively, then, we have to find the max(da, db, dc). 
-<hr /> 
-
-**Solution Idea 1**:
+da, db and dc respectively, then, we have to find the max(da, db, dc). <hr /> 
+### Solution Idea 1:
