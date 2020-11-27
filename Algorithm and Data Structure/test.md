@@ -18,4 +18,6 @@ The three power puff girls move simultaneously from their initial position. And 
 
 Now, we have to find the **maximum** shortest distance from the initial position of any power puff girl to home. In other words, if the shortest distance from the initial postiion of each power puff girl to home is
 da, db and dc respectively, then, we have to find the max(da, db, dc). 
-<br> 
+<hr /> 
+
+**Solution Idea 1**:
