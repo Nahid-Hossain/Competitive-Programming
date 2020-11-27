@@ -17,7 +17,7 @@
 The three power puff girls move simultaneously from their initial position. And in each minute, from their current cells, they can move to any four adjacent cells (North, East, West, South) if the destination cell is neither a wall nor the cell contains a monster. <br>
 
 Now, we have to find the **maximum** of the shortest distances from the initial position of each power puff girl to home. In other words, if the shortest distance from the initial postiion of each power puff girl to home is
-da, db and dc respectively, then, we have to find the max(da, db, dc). <hr /> 
+da, db and dc respectively, then, we have to find the           max(da, db, dc). <hr /> 
 ### Solution Idea 1:
 
 Suppose, the shortest distance from the initial postiion of each power puff girl to home is da, db and dc respectively . To calculate the shortest distance between two cell in a 2D grid, we can use **Breadth-first search**. So, to calculate da, db and dc, we have to run bfs three times from the initial position of each power puff girl separately. After calculating da, db and  dc separately, the final answer will be max(da, db, dc).<br>
